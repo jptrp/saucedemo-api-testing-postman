@@ -19,7 +19,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"username\": \"standard_user\",\n  \"password\": \"secret_sauce\"\n}"
+              "raw": "{\n  \"username\": \"emilys\",\n  \"password\": \"emilyspass\"\n}"
             },
             "url": "{{base_url}}/auth/login"
           },
@@ -47,16 +47,16 @@
                   "pm.test('Response has valid structure', function() {",
                   "    const jsonData = pm.response.json();",
                   "    pm.expect(jsonData).to.be.an('object');",
-                  "    pm.expect(jsonData).to.have.property('token');",
-                  "    pm.expect(jsonData.token).to.be.a('string');",
-                  "    pm.expect(jsonData.token).to.not.be.empty;",
+                  "    pm.expect(jsonData).to.have.property('accessToken');",
+                  "    pm.expect(jsonData.accessToken).to.be.a('string');",
+                  "    pm.expect(jsonData.accessToken).to.not.be.empty;",
                   "});",
                   "",
                   "// Store token for subsequent requests",
                   "const responseData = pm.response.json();",
-                  "if (responseData.token) {",
-                  "    pm.environment.set('token', responseData.token);",
-                  "    console.log('Token stored:', responseData.token);",
+                  "if (responseData.accessToken) {",
+                  "    pm.environment.set('token', responseData.accessToken);",
+                  "    console.log('Token stored:', responseData.accessToken);",
                   "}"
                 ],
                 "type": "text/javascript"
@@ -422,8 +422,8 @@
               "script": {
                 "exec": [
                   "// Status Code Validation",
-                  "pm.test('Status code is 200', function() {",
-                  "    pm.response.to.have.status(200);",
+                  "pm.test('Status code is 200 or 201', function() {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
                   "});",
                   "",
                   "// Content-Type Validation",
