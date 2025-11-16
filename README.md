@@ -512,8 +512,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Dustin Braun**
 
 - GitHub: [@jptrp](https://github.com/jptrp)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- Portfolio: [Your Portfolio](https://yourportfolio.com)
+- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/dustinbrauntesting)
+- Portfolio: [Your Portfolio](https://jptrp.github.io/saucedemo-playwright/)
 
 ---
 
